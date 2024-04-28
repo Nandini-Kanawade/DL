@@ -1,30 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[34]:
-
-
 import tensorflow as tf
 import cProfile
 import time
 
 
-# In[35]:
-
-
 A = tf.constant([[1,2,3],[4,5,7],[5,7,3]])
 tf.print(A)
-
-
-# In[36]:
-
 
 # Sum of all elements in the matrix
 sumOfA = tf.reduce_sum(A)
 tf.print(sumOfA)
-
-
-# In[37]:
 
 
 # Column wise addition [matrix_name, 0]
@@ -32,16 +19,9 @@ colAddOfA = tf.reduce_sum(A,0)
 tf.print(colAddOfA) 
 
 
-# In[39]:
-
-
 # Row wise addition [matrix_name, 1]
 rowAddOfA = tf.reduce_sum(A,1)
 tf.print(rowAddOfA)
-
-
-# In[60]:
-
 
 B = tf.constant([1,2,3])
 tf.print('B =',B)
@@ -62,8 +42,6 @@ mulBC = tf.multiply(B,C)
 tf.print('mulBC =',mulBC)
 
 
-# In[56]:
-
 
 D = tf.constant([[1,2],[8,9],[2,8]])
 tf.print('D:\n',D)
@@ -75,8 +53,6 @@ tf.print('\nE:\n',E)
 matMulDE = tf.matmul(D,E)
 tf.print('\nmatMulDE:\n',matMulDE)
 
-
-# In[57]:
 
 
 D = tf.constant([[1,2,5,4],[8,9,1,9],[2,8,4,6]])
@@ -90,7 +66,6 @@ matMulDE = tf.matmul(D,E)
 tf.print('\nmatMulDE:\n',matMulDE)
 
 
-# In[58]:
 
 
 # Now lets comapre the time comaprision between the ready matmul function & of a that we make for matrix multiplictaion.
@@ -103,16 +78,12 @@ myFuncAns = matmul_myFunc(D,E)
 tf.print('\nmyFuncAns:\n',myFuncAns)
 
 
-# In[61]:
-
 
 with cProfile.Profile() as pr:
     C3 = tf.matmul(D,E)
     pr.print_stats()
 display(C3)
 
-
-# In[62]:
 
 
 with cProfile.Profile() as pr:
