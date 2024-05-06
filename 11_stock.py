@@ -1,6 +1,7 @@
 For the first LSTM layer: 4 * 50 * (1 + 50) + 4 * 50 = 10400
 For the second and third LSTM layers: 4 * 50 * (50 + 50) + 4 * 50 = 20200 (each)
 For the fourth LSTM layer: 4 * 50 * (50 + 50) + 4 * 50 = 20200
+(50 + 1) * 1 = 51.
 """
 
 import numpy as np
